@@ -78,4 +78,8 @@
             font-size: 15px;
         }
 
-    
+    .pie {
+        color: red;
+        right: 20px;
+         bottom: -0;
+    }
