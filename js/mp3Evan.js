@@ -11,17 +11,17 @@ const rutaAudio = `/ev/to/${mes}/${dia}/${diaSemana}.mp3`;
 console.log("Ruta del audio:", rutaAudio);
 
 // Obtener el elemento de audio y la fuente
-const audioPlayer = document.getElementById('audioPlayer');
-const audioSource = document.getElementById('audioSource');
+const mp3PlayerEvan = document.getElementById('mp3PlayerEvan');
+const mp3SourceEvan = document.getElementById('mp3SourceEvan');
 
 // Asignar la ruta del archivo de audio a la fuente
-audioSource.src = rutaAudio;
+mp3SourceEvan.src = rutaAudio;
 
 // Recargar el reproductor de audio para que cargue el nuevo archivo
-audioPlayer.load();
+mp3PlayerEvan.load();
 
 // Manejar errores de carga
-audioPlayer.addEventListener('error', (e) => {
+mp3PlayerEvan.addEventListener('error', (e) => {
     console.error("Error al cargar el audio:", e);
     switch (e.target.error.code) {
         case e.target.error.MEDIA_ERR_SRC_NOT_SUPPORTED:
@@ -39,7 +39,7 @@ audioPlayer.addEventListener('error', (e) => {
 });
 
 // Intentar reproducir el audio (puede no funcionar debido a políticas de autoplay)
-audioPlayer.play().catch((error) => {
+mp3PlayerEvan.play().catch((error) => {
     console.warn("No se pudo reproducir automáticamente:", error);
     console.info("El usuario debe interactuar con la página para reproducir el audio.");
 });
